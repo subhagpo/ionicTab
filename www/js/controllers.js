@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
     
 })
 
-.controller('FeedbackCtrl', function($scope, $window, $ionicSlideBoxDelegate, $ionicModal, Questions) {
+.controller('FeedbackCtrl', function($scope, $window, $ionicSlideBoxDelegate, Questions) {
     
     // Replace the factory with actual data
     $scope.questions = Questions.all();
