@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ui.bootstrap'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -16,11 +16,63 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       cordova.plugins.Keyboard.disableScroll(true);
 
     }
+    
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.styleLightContent();
     }
-  });
+    
+    /* Invoke sync with the custom options, which enables user interaction.
+       For customizing the sync behavior, see SyncOptions in the CodePush documentation. 
+    */
+    window.codePush.sync(
+        function (syncStatus) {
+            switch (syncStatus) {
+                // Result (final) statuses
+                case SyncStatus.UPDATE_INSTALLED:
+                    displayMessage("The update was installed successfully. The changes will be visible after application restart. ");
+                    break;
+                case SyncStatus.UP_TO_DATE:
+                    displayMessage("The application is up to date.");
+                    break;
+                case SyncStatus.UPDATE_IGNORED:
+                    displayMessage("The user decided not to install the optional update.");
+                    break;
+                case SyncStatus.ERROR:
+                    displayMessage("An error occured while checking for updates");
+                    break;
+                
+                // Intermediate (non final) statuses
+                case SyncStatus.CHECKING_FOR_UPDATE:
+                    console.log("Checking for update.");
+                    break;
+                case SyncStatus.AWAITING_USER_ACTION:
+                    console.log("Alerting user.");
+                    break;
+                case SyncStatus.DOWNLOADING_PACKAGE:
+                    console.log("Downloading package.");
+                    break;
+                case SyncStatus.INSTALLING_UPDATE:
+                    console.log("Installing update");
+                    break;
+            }
+        },
+        {
+            installMode: InstallMode.ON_NEXT_RESTART, updateDialog: true
+        },
+        function (downloadProgress) {
+            console.log("Downloading " + downloadProgress.receivedBytes + " of " + downloadProgress.totalBytes + " bytes.");
+        }); 
+        
+        // Displays an alert dialog containing a message.
+        var displayMessage = function (message) {
+        navigator.notification.alert(
+            message,
+            null,
+            'CodePush',
+            'OK');
+        }   
+  });   
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -32,39 +84,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
 
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.feedback', {
+      url: '/feedback',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-feedback': {
+          templateUrl: 'templates/tab-feedback.html',
+          controller: 'FeedbackCtrl'
         }
       }
     })
@@ -74,12 +105,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller: 'AppCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/account');
 
 });

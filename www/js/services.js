@@ -1,50 +1,35 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
+.factory('Auth', function() {
+    var auth = {
+        displayName: 'Subhag Oak',
+        email: 'oaks007@hotmail.com',
+        cover: 'img/12.png',
+        gender: 'mail'
+    }
+    
+    return {
+        instance : function () {
+            return auth;
+        }
+    }
+})
 
+.factory('Questions', function() {
   // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+  var questions = [
+     {
+        Value: 'How do you rate this workshop on a scale of 1 to 10?',
+        Rating: null
+     }, 
+     {
+        Value: 'How do you rate MSFT work in the mobile app dev space on a scale of 1 to 10?',
+        Rating: null
   }];
 
   return {
     all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
+      return questions;
     }
   };
 });

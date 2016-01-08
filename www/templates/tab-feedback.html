@@ -1,0 +1,29 @@
+<ion-view view-title="Tilt your device to provide feedback">
+  <ion-content>
+    <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+        <ion-slide ng-repeat="question in questions track by $index">
+            <div class="card item item-body padding_vertical transparent">
+                <h3>Question {{$index + 1}}/{{questions.length}}: 
+                    <p><h2 style="font-size: 17px">{{question.Value}}</h2></p>
+                </h3>
+                <br>
+                <h2> Rating: </h2>
+                <h3>{{dynamic}} / {{max}}</h3>
+            </div>
+        </ion-slide>
+        <ion-slide>
+
+        <div class="list card">
+          <div class="item">
+            <button class="button button-calm button-full" ng-click="submitSurvey()">
+                    Submit!
+            </button>
+          </div>
+          <div ng-show="surveySubmitted">
+                <h3><center>Survey Submitted!</center></h3> 
+           <div>
+        </div>
+        </ion-slide>
+    </ion-slide-box> 
+  </ion-content>
+</ion-view>

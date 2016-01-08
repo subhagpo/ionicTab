@@ -1,9 +1,17 @@
 <ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+    <ion-content>       
+        <div class="list card">
+            <center>
+                <h2>{{authData.displayName}}</h2>
+                <p><strong>Email: </strong>{{authData.email}}</p>
+            </center>
+
+            <div class="item item-body">
+                <center>
+                    <img src="{{ authData.cover}}" style="width:200px" class="headshot menu-item">
+                    <p><strong>Gender: </strong>{{authData.gender}}</p>
+                </center>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
