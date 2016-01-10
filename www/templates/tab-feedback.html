@@ -4,17 +4,12 @@
         <ion-slide ng-repeat="question in questions track by $index">
             <div class="card item item-body padding_vertical transparent">
                 <div class="header">
-                    <h1><strong>Question {{$index + 1}}/{{questions.length}}:</strong></h1>
-                    <h3 style="font-size: 17px">{{question.Value}}</h3>
-                    
-                    <div class="detail">
-                        <h2><strong> Rating: </h2>
-                        <h3>{{dynamic}} / {{max}}</h3>
-                    </div>
-                
-                 </div>
-                
-                
+                    <h1>Question {{$index + 1}}/{{questions.length}}: </h1>
+                    <h2 style="font-size: 32px">{{question.Value}}</h2>
+                     <br>
+                    <h1><strong> Rating: </strong></h1>
+                    <h2>{{dynamic}} / {{max}}</h2>
+                  </div>
             </div>
         </ion-slide>
         <ion-slide>
