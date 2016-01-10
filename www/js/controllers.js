@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
     
 })
 
-.controller('FeedbackCtrl', function($scope, $window, $ionicSlideBoxDelegate, Questions) {
+.controller('FeedbackCtrl', function($scope, $ionicSlideBoxDelegate, $window, Questions) {
     
     // Replace the factory with actual data
     $scope.questions = Questions.all();
@@ -109,5 +109,5 @@ angular.module('starter.controllers', [])
     }
 
     var options = { frequency: 900 };  // Update every 900 milliseconds
-    $window.navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 })
