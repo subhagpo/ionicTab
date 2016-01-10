@@ -5,7 +5,7 @@ angular.module('starter.services', [])
         displayName: 'Subhag Oak',
         email: 'oaks007@hotmail.com',
         cover: 'img/12.png',
-        gender: 'mail'
+        gender: 'Male'
     }
     
     return {

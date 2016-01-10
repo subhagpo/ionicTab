@@ -109,5 +109,5 @@ angular.module('starter.controllers', [])
     }
 
     var options = { frequency: 900 };  // Update every 900 milliseconds
-    navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    //navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 })

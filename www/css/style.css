@@ -349,10 +349,27 @@ a.download:hover, a.follow:hover {
   margin: 14px;
 }
 
+.slider-slide {
+  padding-top: 80px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  font-weight: 300;
+  font-size: 24px;
+}
+
 .question {
-    background: yellow;
+    border-radius: 30px;
+    background: aliceblue;
+    padding-top: 5px;
 }
 
 .rating {
-    background: lightgray;
+    background: lightsteelblue;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
