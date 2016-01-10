@@ -3,12 +3,16 @@
     <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
         <ion-slide ng-repeat="question in questions track by $index">
             <div class="card item item-body padding_vertical transparent">
-                <h3>Question {{$index + 1}}/{{questions.length}}: 
-                    <p><h2 style="font-size: 17px">{{question.Value}}</h2></p>
-                </h3>
+                <div class="question">
+                    <h3>Question {{$index + 1}}/{{questions.length}}: 
+                        <p><h2 style="font-size: 17px">{{question.Value}}</h2></p>
+                    </h3>
+                 </div>
                 <br>
-                <h2> Rating: </h2>
-                <h3>{{dynamic}} / {{max}}</h3>
+                <div class="rating">
+                    <h2> Rating: </h2>
+                    <h3>{{dynamic}} / {{max}}</h3>
+                </div>
             </div>
         </ion-slide>
         <ion-slide>

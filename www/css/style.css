@@ -348,3 +348,11 @@ a.download:hover, a.follow:hover {
   display: block;
   margin: 14px;
 }
+
+.question {
+    background: yellow;
+}
+
+.rating {
+    background: lightgray;
+}
