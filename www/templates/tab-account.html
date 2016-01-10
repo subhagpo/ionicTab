@@ -1,16 +1,17 @@
 <ion-view view-title="Account">
     <ion-content>       
-        <div class="list card">
-            <center>
-                <h2>{{authData.displayName}}</h2>
-                <p><strong>Email: </strong>{{authData.email}}</p>
-            </center>
-
-            <div class="item item-body">
+        <div class="card list">
+            <div class="accountHeader">
                 <center>
-                    <img src="{{ authData.cover}}" style="width:200px" class="headshot menu-item">
-                    <p><strong>Gender: </strong>{{authData.gender}}</p>
+                    <h2>{{authData.displayName}}</h2>
+                    <p><strong>Email: </strong>{{authData.email}}</p>
                 </center>
+                <div class="item item-body detail">
+                    <center>
+                        <img src="{{ authData.cover}}" style="width:200px" class="headshot menu-item">
+                        <p><strong>Gender: </strong>{{authData.gender}}</p>
+                    </center>
+                </div>
             </div>
         </div>
     </ion-content>
