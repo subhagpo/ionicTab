@@ -19,8 +19,7 @@ module.exports = function(config) {
         '../www/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         '../www/js/*.js',
         '../www/lib/angular-mocks/angular-mocks.js', 
-        '**/*tests.js' 
-
+        'tests/unit/**/*.test.js'
     ],
 
 
