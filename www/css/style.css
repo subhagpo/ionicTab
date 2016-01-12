@@ -386,5 +386,6 @@ a.download:hover, a.follow:hover {
 
 #gender {
     color: darkslateblue;
+    background-color: yellowgreen;
     font-size: 18px;
 }
