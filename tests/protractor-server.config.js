@@ -1,7 +1,7 @@
 exports.config = {
     framework: 'jasmine2',
     seleniumAddress: 'http://ondemand.saucelabs.com:80/wd/hub',
-    specs: ['e2e/**/*.js'],
+    specs: ['e2e/*.tests.js'],
     capabilities: {
         browserName: '',
         appiumVersion: '1.4.11',
