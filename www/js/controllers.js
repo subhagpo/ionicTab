@@ -63,6 +63,9 @@ angular.module('starter.controllers', [])
     $scope.submitSurvey = function() {
          $scope.surveySubmitted = true;
          $scope.$apply();
+         
+         //force crash the app.
+         hockeyApp.forceCrash();
     }
 
     $scope.previous = function() {

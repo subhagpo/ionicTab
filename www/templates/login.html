@@ -2,7 +2,7 @@
   <ion-header-bar>
     <div class="title" ng-show="!authData">Login</div>
     
-    <div class="title" ng-show="authData">
+    <div class="title" ng-show="authData" id="displayName">
       Hello, {{authData.displayName}}!!
     </div>
     
@@ -16,11 +16,11 @@
   <br>
   <br>
 
-  <div ng-click="login()" ng-show="!authData">
-    <center><img src="img/fb.png" style="width:250px"></img></center>
+  <div ng-click="login()" ng-show="!authData" id="login">
+    <center><img src="img/fb.png" style="width:250px" alt="Log In"></img></center>
   </div>
 
-  <div ng-show="authData" ng-click="savefbinfo()" target="_blank">
+  <div ng-show="authData" ng-click="savefbinfo()" target="_blank" id="enter">
     <center><img src="img/enter.png" style="width:100px"></img></center>
   </div>
 

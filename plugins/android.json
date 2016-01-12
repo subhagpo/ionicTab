@@ -45,6 +45,10 @@
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"HockeyApp\"><param name=\"android-package\" value=\"com.zengularity.cordova.hockeyapp.HockeyApp\" /></feature>",
+                            "count": 1
                         }
                     ],
                     "/widget": [
@@ -61,6 +65,30 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 2
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:name=\"net.hockeyapp.android.FeedbackActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"net.hockeyapp.android.UpdateActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"net.hockeyapp.android.LoginActivity\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -81,6 +109,9 @@
             "PACKAGE_NAME": "com.ionicframework.myapp925502"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.myapp925502"
+        },
+        "cordova-plugin-hockeyapp": {
             "PACKAGE_NAME": "com.ionicframework.myapp925502"
         }
     },

@@ -378,3 +378,13 @@ a.download:hover, a.follow:hover {
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
 }
+
+#question {
+    color: midnightblue;
+    font-size: 32px;
+}
+
+#gender {
+    color: darkslateblue;
+    font-size: 18px;
+}
