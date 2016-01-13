@@ -1,20 +1,5 @@
 angular.module('starter.services', [])
 
-.factory('Auth', function() {
-    var auth = {
-        displayName: 'Subhag Oak',
-        email: 'oaks007@hotmail.com',
-        cover: 'img/12.png',
-        gender: 'Male'
-    }
-    
-    return {
-        instance : function () {
-            return auth;
-        }
-    }
-})
-
 .factory('Questions', function() {
   // Some fake testing data
   var questions = [

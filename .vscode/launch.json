@@ -2,24 +2,68 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch index.html",
-			"type": "chrome",
+			"name": "Run Android on device",
+			"type": "cordova",
 			"request": "launch",
-			"file": "index.html"
+			"platform": "android",
+			"target": "device",
+			"sourceMaps": true
 		},
 		{
-			"name": "Launch localhost with sourcemaps",
-			"type": "chrome",
+			"name": "Run iOS on device",
+			"type": "cordova",
 			"request": "launch",
-			"url": "http://localhost/mypage.html",
-			"sourceMaps": true,
-			"outDir": "out"
+			"platform": "ios",
+			"target": "device",
+			"sourceMaps": true
 		},
 		{
-			"name": "Attach",
-			"type": "chrome",
+			"name": "Attach to running android on device",
+			"type": "cordova",
 			"request": "attach",
-			"port": 9222
+			"platform": "android",
+			"target": "device",
+			"sourceMaps": true
+		},
+		{
+			"name": "Attach to running iOS on device",
+			"type": "cordova",
+			"request": "attach",
+			"platform": "ios",
+			"target": "device",
+			"sourceMaps": true
+		},
+		{
+			"name": "Run Android on emulator",
+			"type": "cordova",
+			"request": "launch",
+			"platform": "android",
+			"target": "emulator",
+			"sourceMaps": true
+		},
+		{
+			"name": "Run iOS on simulator",
+			"type": "cordova",
+			"request": "launch",
+			"platform": "ios",
+			"target": "emulator",
+			"sourceMaps": true
+		},
+		{
+			"name": "Attach to running android on emulator",
+			"type": "cordova",
+			"request": "attach",
+			"platform": "android",
+			"target": "emulator",
+			"sourceMaps": true
+		},
+		{
+			"name": "Attach to running iOS on simulator",
+			"type": "cordova",
+			"request": "attach",
+			"platform": "ios",
+			"target": "emulator",
+			"sourceMaps": true
 		}
 	]
 }

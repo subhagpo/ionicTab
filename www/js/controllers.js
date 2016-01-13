@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, Auth) {
+.controller('AppCtrl', function($scope, $ionicModal) {
  
     //Opens the login modal as soon as the controller initializes
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -12,7 +12,14 @@ angular.module('starter.controllers', [])
 
     // Authenticate user
     $scope.login = function() {
-        $scope.authData = Auth.instance();
+        var auth = {
+            displayName: 'Subhag Oak',
+            email: 'oaks007@hotmail.com',
+            profileImageURL: 'img/12.png'
+        }
+    
+        $scope.authData = auth;
+        $scope.$apply();
     }
   
     $scope.savefbinfo  = function() {
@@ -22,7 +29,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('FeedbackCtrl', function($scope, $ionicSlideBoxDelegate, $window, Questions) {
-    
     // Replace the factory with actual data
     $scope.questions = Questions.all();
     
@@ -34,49 +40,30 @@ angular.module('starter.controllers', [])
     $scope.prev = 0;
     $scope.surveySubmitted = false;
     
+    // watch acceleration
 
     $scope.slideHasChanged = function(index) {
-        console.log('yes yes', index);
+        console.log('index', index);
 
         if(!$scope.questions[$scope.prev].Rating){
             $scope.questions[$scope.prev].Rating = $scope.dynamic;
         }
         
-        if(index<$scope.questions.length) {
+        if (index<$scope.questions.length) {
             $scope.prev = index;
             $scope.dynamic = 5;
-        } else {
-            console.log('no no', index);
+        } 
+        else {
+            console.log('index', index);
         }
     }
-
-    $scope.closeLogin = function() {
-        $scope.modal.hide();
-    };
-
-    $scope.rateAgain = function() {
-        $scope.dynamic = $scope.questions[$scope.prev].Rating;
-        $scope.questions[$scope.prev].Rating = null;
-    }
-
 
     $scope.submitSurvey = function() {
          $scope.surveySubmitted = true;
          $scope.$apply();
-         
-         //force crash the app.
-         hockeyApp.forceCrash();
     }
 
-    $scope.previous = function() {
-        $ionicSlideBoxDelegate.previous();
-    }
-
-    $scope.next = function() {
-        $ionicSlideBoxDelegate.next();
-    }
-    
-    // Watch the device motion to change the rating
+   // Watch the device motion to change the rating
     function onSuccess(acceleration) {
         X = acceleration.x;
         Y = acceleration.y;
@@ -110,7 +97,4 @@ angular.module('starter.controllers', [])
     function onError() {
         console.log('accelerometer not working');
     }
-
-    var options = { frequency: 900 };  // Update every 900 milliseconds
-    //navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 })
