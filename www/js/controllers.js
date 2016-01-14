@@ -19,11 +19,20 @@ angular.module('starter.controllers', [])
         }
     
         $scope.authData = auth;
-        $scope.$apply();
     }
   
     $scope.savefbinfo  = function() {
         $scope.modallogin.hide();
+        /*
+        // hockey app registration 
+        hockeyapp.start(function() {
+            console.log("success");
+        }, function(err) {       
+            console.log("error: " + err);
+        }, "8657034c4745497fb6dfc04194264957" , true);
+        
+        hockeyapp.forceCrash();
+        */
     }
     
 })
@@ -61,10 +70,8 @@ angular.module('starter.controllers', [])
     $scope.submitSurvey = function() {
          $scope.surveySubmitted = true;
          $scope.$apply();
-         
-         hockeyapp.forceCrash();
     }
-
+    
    // Watch the device motion to change the rating
     function onSuccess(acceleration) {
         X = acceleration.x;

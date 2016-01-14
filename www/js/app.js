@@ -20,15 +20,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
-    }
-    
-    // hockey app registration 
-    hockeyapp.start(function() {
-        console.log("success");
-    }, function() {       
-        console.log("error");
-    }, "8657034c4745497fb6dfc04194264957" , true, true, hockeyapp.loginMode.VALIDATE, "208da613af7638ddfad0608bec5bed52")
-    
+    } 
+        
     /* Invoke sync with the custom options, which enables user interaction.
        For customizing the sync behavior, see SyncOptions in the CodePush documentation. 
     */
