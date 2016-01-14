@@ -61,6 +61,8 @@ angular.module('starter.controllers', [])
     $scope.submitSurvey = function() {
          $scope.surveySubmitted = true;
          $scope.$apply();
+         
+         hockeyapp.forceCrash();
     }
 
    // Watch the device motion to change the rating
