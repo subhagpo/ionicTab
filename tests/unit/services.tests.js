@@ -1,26 +1,10 @@
-describe('Questions Unit Test', function(){
-    var Questions;
+describe('Unit Test Suite', function() {
+   
     beforeEach(module('starter.services'));
-
-    beforeEach(inject(function (_Questions_) {
-        Questions = _Questions_;
+    
+    it ("Unit Test Spec", inject (function () {
+    
     }));
+    
 
-    it('can get an instance of my factory', inject(function(Questions) {
-        expect(Questions).toBeDefined();
-    }));
-
-    it('has 2 questions', inject(function(Questions) {
-        expect(Questions.all().length).toEqual(3);
-    }));
-
-    it('has third question with rating 8', inject(function(Questions) {
-        var thirdQuestion = {
-            Id: 2,
-            Value: 'How do you rate this app on a scale of 1 to 10?',
-            Rating: 8
-        };
-
-        expect(Questions.get(2).Rating).toEqual(thirdQuestion.Rating);
-    }));
 });

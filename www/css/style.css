@@ -366,7 +366,6 @@ a.download:hover, a.follow:hover {
 }
 
 .header {
-    border-radius: 30px;
     background: aliceblue;
     padding-top: 5px;
 }
@@ -375,16 +374,4 @@ a.download:hover, a.follow:hover {
     background: lightsteelblue;
     padding-top: 5px;
     padding-bottom: 15px;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
-
-#question {
-    color: midnightblue;
-    font-size: 32px;
-}
-
-#email {
-    color: darkslateblue;
-    font-size: 18px;
 }
